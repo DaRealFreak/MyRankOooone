@@ -1,0 +1,39 @@
+# scrutinizer-ci.com configuration
+# language: python
+imports:
+- python
+
+build:
+  environment:
+    python: 3.6.3
+  tests:
+    before:
+    - 'python setup.py install'
+    - 'pip install "python-dotenv>=0.7.1"'
+    - 'pip install "Pillow>=5.0.0"'
+    - 'pip install "requests_mock>=1.4.0"'
+    - 'pip install nose-exclude'
+    override:
+    - command: 'nosetests --exclude-dir=tests/custom'
+  nodes:
+
+    analysis:
+      tests:
+        override:
+        - py-scrutinizer-run
+
+    coverage:
+      tests:
+        before:
+        - 'python setup.py install'
+        - 'pip install "python-dotenv>=0.7.1"'
+        - 'pip install "Pillow>=5.0.0"'
+        - 'pip install "requests_mock>=1.4.0"'
+        - 'pip install nose-exclude'
+        - 'pip install coveralls'
+        override:
+        - command: 'nosetests --exclude-dir=tests/custom --with-coverage --cover-package=saucenao'
+          coverage:
+            file: '.coverage'
+            config_file: '.coveragerc'
+            format: 'py-cc'
