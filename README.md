@@ -1,7 +1,8 @@
 # MyRankOooone
-[![Build Status](https://travis-ci.com/DaRealFreak/MyRankOooone.svg?branch=master)](https://travis-ci.com/DaRealFreak/MyRankOooone)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/DaRealFreak/MyRankOooone/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/DaRealFreak/MyRankOooone/?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/DaRealFreak/MyRankOooone/badge.svg?branch=master)](https://coveralls.io/github/DaRealFreak/MyRankOooone?branch=master)  
+[![Build Status](https://img.shields.io/travis/com/DaRealFreak/MyRankOooone.svg?style=flat-square)](https://travis-ci.com/DaRealFreak/MyRankOooone)
+[![Scrutinizer](https://img.shields.io/scrutinizer/g/DaRealFreak/MyRankOooone.svg?style=flat-square)](https://scrutinizer-ci.com/g/DaRealFreak/MyRankOooone/?branch=master)
+[![Coveralls github](https://img.shields.io/coveralls/github/DaRealFreak/MyRankOooone.svg?style=flat-square)](https://coveralls.io/github/DaRealFreak/MyRankOooone?branch=master)
+[![GitHub license](https://img.shields.io/github/license/DaRealFreak/MyRankOooone.svg?style=flat-square)](https://github.com/DaRealFreak/MyRankOooone/blob/master/LICENSE.md)  
 small script to keep track of your [DDNet](https://ddnet.tw/) ranks and get notified.
 
 ### Installing
