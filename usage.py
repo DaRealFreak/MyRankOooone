@@ -3,8 +3,8 @@
 #
 # This is an example usage
 
-from my_rank_oooone.databaseIO import DatabaseIO
+from my_rank_oooone import MyRankOooone
 
 if __name__ == '__main__':
-    db = DatabaseIO()
-    db.add_player('meter\'.')
+    rank = MyRankOooone()
+    rank.add_player('meter\'.')
