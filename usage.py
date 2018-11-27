@@ -3,9 +3,8 @@
 #
 # This is an example usage
 
-from pprint import pprint
-
-from my_rank_oooone import *
+from my_rank_oooone.databaseIO import DatabaseIO
 
 if __name__ == '__main__':
-    results = run()
+    db = DatabaseIO()
+    db.add_player('meter\'.')

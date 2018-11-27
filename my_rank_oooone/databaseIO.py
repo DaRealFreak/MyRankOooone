@@ -23,3 +23,35 @@ class DatabaseIO(object):
         if not row:
             return {}
         return dict(zip(row.keys(), row))
+
+    def get_player(self, player_name: str) -> dict:
+        """Returns the first player
+
+        :type player_name: str
+        :return:
+        """
+        item = self.cursor.execute('SELECT * FROM players WHERE player = ?', [player_name]).fetchone()
+        return self.dict_from_row(item)
+
+    def get_first_or_create_player(self, player_name: str) -> dict:
+        """Either get the first player or create a new player and return it
+
+        :type player_name: str
+        :return:
+        """
+        player = self.cursor.execute('SELECT * FROM players WHERE player = ?', [player_name]).fetchone()
+        if not player:
+            # create the player and retrieve it again
+            self.add_player(player_name)
+            return self.get_first_or_create_player(player_name)
+        return self.dict_from_row(player)
+
+    def add_player(self, player_name: str) -> None:
+        """Insert a player into the database
+
+        :type player_name: str
+        :return:
+        """
+        self.cursor.execute('INSERT INTO players (player) VALUES (?)', [player_name])
+        self.conn.commit()
+        return self.cursor.lastrowid
