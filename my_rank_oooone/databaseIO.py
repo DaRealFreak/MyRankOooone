@@ -17,7 +17,7 @@ class DatabaseIO(object):
     def dict_from_row(row: sqlite3.Row) -> dict:
         """Convert the sqlite.Row result to a dictionary
 
-        :param row:
+        :type row: sqlite3.Row
         :return:
         """
         if not row:
