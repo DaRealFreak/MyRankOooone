@@ -14,13 +14,13 @@ def slugify(name: str) -> str:
     string = ""
     for c in name:
         if c in x or ord(c) >= 128:
-            string += "-%s-" % ord(c)
+            string += "-{ord:d}-".format(ord=ord(c))
         else:
             string += c
-        return string
+    return string
 
 
-def deslugify(name: str) -> bytes:
+def deslugify(name: str) -> str:
     """Deslugify function for player names from DDNet
     rewritten from:
     https://github.com/ddnet/ddnet-scripts/blob/203fcb4241261ae8f006362303723e4546e0e7f7/servers/scripts/ddnet.py#L177
@@ -30,4 +30,4 @@ def deslugify(name: str) -> bytes:
     """
     for special_char in re.findall('(-([\d]+)-)', name):
         name = name.replace(special_char[0], chr(int(special_char[1])))
-    return name.encode('utf-8')
+    return name
